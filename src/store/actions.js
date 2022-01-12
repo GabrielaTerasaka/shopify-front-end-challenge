@@ -25,6 +25,7 @@ export const loadImagesFail = () => ({
 
 export const toggleLikeImage = (id) => ({
   type: TOGGLE_LIKE_IMAGE,
+  payload: { id },
 });
 
 // export const unlikeImages = (id) => ({
