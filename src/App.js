@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import { connect } from "react-redux";
+import { loadImages } from "./store/thunks";
+import { useEffect } from "react";
+import localStorage from "redux-persist/es/storage";
+
+function App(props) {
+  let { isLoading, images, loadingImages } = props;
+
+  useEffect(() => {
+    async function getImages() {
+      const response = await localStorage.getItem("persist:root");
+      if (!response) {
+        loadingImages();
+      }
+    }
+    getImages();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLoading ? <p>is loading...</p> : <p>loaded</p>}
+      {images.map((image) => (
+        <p>{String(image.isLike)}</p>
+      ))}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  isLoading: state.nasaImages.isLoading,
+  images: state.nasaImages.data,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  loadingImages: () => dispatch(loadImages()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
