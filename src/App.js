@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 
 import { connect } from "react-redux";
 import { loadImages } from "./store/thunks";
