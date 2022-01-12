@@ -1,0 +1,43 @@
+@use "../../styles_partials/functions" as *;
+@use "../../styles_partials/variables" as *;
+@use "../../styles_partials/mixins" as *;
+
+.loading {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color;
+  padding-top: calc(50vh - toRem(90));
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    width: toRem(100);
+    height: toRem(100);
+    animation: logo-animation 3s linear 0s infinite;
+
+    @include tablet-breakpoint {
+      width: toRem(180);
+      height: toRem(180);
+      animation: logo-animation 3s linear 0s infinite;
+    }
+  }
+}
+
+@keyframes logo-animation {
+  0% {
+    transform: translate(-100px, -100px) scale(1);
+  }
+  25% {
+    transform: translate(-50px, -50px) scale(1.5);
+  }
+  50% {
+    transform: translate(0, 0) scale(2);
+  }
+  75% {
+    transform: translate(-50px, -50px) scale(1.5);
+  }
+  100% {
+    transform: translate(-100px, -100px) scale(1);
+  }
+}

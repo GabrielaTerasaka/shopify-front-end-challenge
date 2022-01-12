@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { loadImages } from "./store/thunks";
 import { useEffect } from "react";
 import localStorage from "redux-persist/es/storage";
+import Loading from "./components/Loading";
 
 function App(props) {
   let { isLoading, images, loadingImages } = props;
@@ -20,7 +21,7 @@ function App(props) {
 
   return (
     <div className="App">
-      {isLoading ? <p>is loading...</p> : <p>loaded</p>}
+      {isLoading && <Loading />}
       {images.map((image) => (
         <p>{String(image.isLike)}</p>
       ))}
