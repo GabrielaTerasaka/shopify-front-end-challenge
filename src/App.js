@@ -16,7 +16,7 @@ function App(props) {
       }
     }
     getImages();
-  }, []);
+  }, [loadingImages]);
 
   return (
     <div className="App">
