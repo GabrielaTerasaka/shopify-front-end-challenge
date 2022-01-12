@@ -5,6 +5,7 @@ import { loadImages } from "./store/thunks";
 import { useEffect } from "react";
 import localStorage from "redux-persist/es/storage";
 import Loading from "./components/Loading";
+import ImageCard from "./components/ImageCard/ImageCard";
 
 function App(props) {
   let { isLoading, images, loadingImages } = props;
@@ -21,10 +22,21 @@ function App(props) {
 
   return (
     <div className="App">
+      <h1 className="App__title">Spacestagram</h1>
+      <p className="App__details">
+        Brought to you by NASA's Mars Rover Photos API
+      </p>
       {isLoading && <Loading />}
-      {images.map((image) => (
-        <p>{String(image.isLike)}</p>
-      ))}
+      <div
+        className={`App__images-wrapper ${
+          isLoading ? "App__images-wrapper--hidden" : ""
+        }`}
+      >
+        {images.map((image) => (
+          // <p>{String(image.isLike)}</p>
+          <ImageCard image={image} />
+        ))}
+      </div>
     </div>
   );
 }

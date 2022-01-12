@@ -1,0 +1,45 @@
+@use "../../styles_partials/functions" as *;
+@use "../../styles_partials/variables" as *;
+@use "../../styles_partials/mixins" as *;
+
+.card {
+  width: 100%;
+  min-width: toRem(200);
+  max-width: toRem(325);
+  background-color: $tertiary-font;
+  border-radius: 16px;
+  font-size: toRem(16);
+  font-weight: $font-demi;
+
+  &__image {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+  &__wrapper {
+    padding: toRem(8);
+  }
+  &__details {
+    font-weight: $font-demi;
+    &--span {
+      // font-weight: $font-regular;
+    }
+  }
+  &__inner-wrapper {
+    @include flex-wrap(row);
+  }
+  &__date {
+  }
+  &__like-icon {
+    margin-left: auto;
+    font-size: toRem(24);
+    color: rgba($color: $primary-font, $alpha: 0.5);
+    cursor: pointer;
+
+    &:hover {
+      color: rgba($color: $tertiary-color, $alpha: 0.5);
+    }
+    &--like {
+      color: $tertiary-color;
+    }
+  }
+}

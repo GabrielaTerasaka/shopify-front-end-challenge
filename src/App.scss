@@ -1,1 +1,27 @@
 @use "./styles_partials/global" as *;
+@use "./styles_partials/functions" as *;
+@use "./styles_partials/variables" as *;
+@use "./styles_partials/mixins" as *;
+
+.App {
+  padding: toRem(24);
+  background-color: $background-color;
+
+  &__title {
+    margin-bottom: toRem(12);
+    font-size: toRem(48);
+  }
+  &__details {
+    font-style: italic;
+  }
+  &__images-wrapper {
+    padding: toRem(24) 0;
+    @include flex-wrap;
+    opacity: 1;
+    transition: opacity linear 0.5s;
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+}

@@ -4,10 +4,9 @@
 
 .loading {
   display: block;
-  width: 100vw;
-  height: 100vh;
-  background-color: $background-color;
-  padding-top: calc(50vh - toRem(90));
+  width: calc(100vw - toRem(48));
+  height: calc(100vh - toRem(48));
+  padding-top: calc(50vh - toRem(114));
 
   &__image {
     display: block;
