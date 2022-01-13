@@ -14,17 +14,10 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: toRem(18);
+  font-size: toRem(14);
   font-weight: 300;
   color: $primary-font;
-}
-
-a {
-  color: $primary-font;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-li {
-  list-style: none;
+  @include tablet-breakpoint {
+    font-size: toRem(18);
+  }
 }

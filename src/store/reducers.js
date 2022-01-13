@@ -1,10 +1,8 @@
 import {
-  //   GET_IMAGES,
   LOAD_IMAGES_IN_PROGRESS,
   LOAD_IMAGES_SUCCESS,
   LOAD_IMAGES_FAIL,
   TOGGLE_LIKE_IMAGE,
-  //   UNLIKE_IMAGES,
 } from "./actions";
 
 const initialState = {
@@ -16,17 +14,12 @@ export const nasaImages = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    // case GET_IMAGES: {
-    //   const { photos } = payload;
-    //   console.log(photos);
-    //   return state;
-    // }
     case LOAD_IMAGES_IN_PROGRESS: {
       return { ...state, isLoading: true };
     }
     case LOAD_IMAGES_SUCCESS: {
       const { photos } = payload;
-      console.log(photos);
+
       return {
         ...state,
         isLoading: false,
@@ -50,11 +43,6 @@ export const nasaImages = (state = initialState, action) => {
         }),
       };
     }
-    // case UNLIKE_IMAGES: {
-    //   const { id } = payload;
-
-    //   return state;
-    // }
     default:
       return state;
   }

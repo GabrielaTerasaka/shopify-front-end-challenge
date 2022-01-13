@@ -10,18 +10,25 @@
   border-radius: 16px;
   font-size: toRem(16);
   font-weight: $font-demi;
+  box-shadow: 0px 2px 5px rgba($color: $primary-color, $alpha: 0.2);
+  color: $primary-color;
 
   &__image {
     width: 100%;
     border-radius: 16px 16px 0 0;
+    @include tablet-breakpoint {
+      height: toRem(325);
+      object-fit: cover;
+    }
   }
   &__wrapper {
-    padding: toRem(8);
+    padding: toRem(16);
   }
   &__details {
     font-weight: $font-demi;
+    margin-bottom: toRem(8);
+
     &--span {
-      // font-weight: $font-regular;
     }
   }
   &__inner-wrapper {

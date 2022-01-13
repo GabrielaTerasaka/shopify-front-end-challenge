@@ -8,17 +8,31 @@
   background-color: $background-color;
 
   &__title {
-    margin-bottom: toRem(12);
-    font-size: toRem(48);
+    color: $secondary-color;
+    margin-bottom: toRem(24);
+    letter-spacing: 0.5px;
+    font-size: toRem(36);
+    text-align: center;
+    @include tablet-breakpoint {
+      letter-spacing: 2.5px;
+      font-size: toRem(52);
+    }
   }
   &__details {
     font-style: italic;
+    text-align: center;
   }
   &__images-wrapper {
-    padding: toRem(24) 0;
+    padding: toRem(48) 0;
     @include flex-wrap;
+    gap: toRem(24);
     opacity: 1;
     transition: opacity linear 0.5s;
+
+    @include tablet-breakpoint {
+      width: 100%;
+      @include flex-wrap(row, center, flex-end);
+    }
 
     &--hidden {
       opacity: 0;

@@ -33,8 +33,7 @@ function App(props) {
         }`}
       >
         {images.map((image) => (
-          // <p>{String(image.isLike)}</p>
-          <ImageCard image={image} />
+          <ImageCard image={image} key={image.id} />
         ))}
       </div>
     </div>

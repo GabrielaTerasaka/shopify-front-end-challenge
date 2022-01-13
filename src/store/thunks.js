@@ -16,8 +16,6 @@ export const loadImages = () => async (dispatch) => {
       `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`
     );
 
-    console.log(images.data);
-
     dispatch(loadImagesSuccess(images.data));
   } catch (e) {
     console.log(e);

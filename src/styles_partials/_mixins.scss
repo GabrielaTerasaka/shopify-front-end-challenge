@@ -1,12 +1,6 @@
 @use "./variables" as *;
 @use "./functions" as *;
 
-@mixin text-style($size, $height, $weight) {
-  font-size: $size;
-  line-height: $height;
-  font-weight: $weight;
-}
-
 @mixin flex-wrap($direction: column, $just-content: center, $align: center) {
   display: flex;
   flex-direction: $direction;
