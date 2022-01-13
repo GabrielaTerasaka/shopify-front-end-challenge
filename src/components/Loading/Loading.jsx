@@ -4,7 +4,7 @@ import nasaLogo from "../../assets/logos/nasa-6.svg";
 const Loading = () => {
   return (
     <div className="loading">
-      <img src={nasaLogo} alt="" className="loading__image" />
+      <img src={nasaLogo} alt="NASA's logo" className="loading__image" />
     </div>
   );
 };

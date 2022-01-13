@@ -11,7 +11,11 @@ const ImageCard = (props) => {
 
   return (
     <article className="card">
-      <img src={img_src} alt="" className="card__image" />
+      <img
+        src={img_src}
+        alt={`Mars - by ${camera.full_name}/ Rover ${rover.name}`}
+        className="card__image"
+      />
       <div className="card__wrapper">
         <p className="card__details">
           <span className="card__details--span">{camera.full_name}</span>
